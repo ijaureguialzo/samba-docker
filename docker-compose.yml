@@ -11,10 +11,10 @@ services:
       - "138:138/udp"
     environment:
       TZ: "Europe/Madrid"
-      SHARE: "home;/home;yes;yes;no;;;;home"
-      PERMISSIONS: "true"
-      #USER: "username;password"
+      SHARE: "${SHARE_NAME};/${SHARE_NAME};yes;yes;yes;;;;${SHARE_NAME}"
       NMBD: "true"
+      USERID: $USER_ID
+      GROUPID: $GROUP_ID
     volumes:
-      - ${SHARE}:/home
+      - ${SHARE_PATH}:/${SHARE_NAME}
     restart: unless-stopped

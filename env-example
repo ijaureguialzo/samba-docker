@@ -1,1 +1,4 @@
-SHARE=/tmp
+SHARE_PATH=/tmp
+SHARE_NAME=tmp
+USER_ID=pi
+GROUP_ID=pi
