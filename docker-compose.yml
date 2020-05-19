@@ -11,7 +11,7 @@ services:
       - "138:138/udp"
     environment:
       TZ: "Europe/Madrid"
-      SHARE: "${SHARE_NAME};/${SHARE_NAME};yes;yes;yes;;;;${SHARE_NAME}"
+      SHARE: "${SHARE_NAME};/${SHARE_NAME};yes;no;yes;;;;${SHARE_NAME}"
       NMBD: "true"
       USERID: $USER_ID
       GROUPID: $GROUP_ID
