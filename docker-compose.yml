@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  samba:
+    container_name: samba
+    image: dperson/samba
+    ports:
+      - "139:139"
+      - "445:445"
+      - "137:137/udp"
+      - "138:138/udp"
+    environment:
+      TZ: "Europe/Madrid"
+      SHARE: "home;/home;yes;yes;no;;;;home"
+      PERMISSIONS: "true"
+      #USER: "username;password"
+      NMBD: "true"
+    volumes:
+      - ${SHARE}:/home
+    restart: unless-stopped
