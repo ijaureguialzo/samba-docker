@@ -2,6 +2,7 @@ help:
 	@echo 'Opciones:'
 	@echo ''
 	@echo 'start | stop | restart | stop-all'
+	@echo 'update'
 	@echo 'logs'
 	@echo 'stats'
 	@echo 'clean'
@@ -16,6 +17,11 @@ restart: stop start
 
 stop-all:
 	@docker stop `docker ps -aq`
+
+_build:
+	@docker-compose build --pull
+
+update: _build start
 
 logs:
 	@docker-compose logs
