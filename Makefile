@@ -19,7 +19,7 @@ stop-all:
 	@docker stop `docker ps -aq`
 
 _build:
-	@docker-compose build --pull
+	@docker-compose pull
 
 update: _build start
 
