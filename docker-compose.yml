@@ -16,6 +16,7 @@ services:
       USERID: $USER_ID
       GROUPID: $GROUP_ID
       SMB: "true"
+      RECYCLE: "true"
     volumes:
       - ${SHARE_PATH}:/${SHARE_NAME}
     restart: unless-stopped
